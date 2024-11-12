@@ -25,5 +25,5 @@ SELECT
   year,
   updated_on,
   ST_GEOGPOINT(latitude, longitude) geo_point
-FROM `bigquery-public-data.chicago_crime.crime` crime
+FROM ${ref("crime")} crime
 WHERE year=2024
