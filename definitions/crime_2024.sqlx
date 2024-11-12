@@ -1,0 +1,29 @@
+config {
+    type: "table",
+    tags: ["FULL","FILTER_DATA"],
+    assertions: {
+      nonNull: ["unique_key"]
+    }
+}
+
+SELECT
+  unique_key,
+  case_number,
+  date,
+  block,
+  iucr,
+  primary_type,
+  description,
+  location_description,
+  arrest,
+  domestic,
+  beat,
+  district,
+  ward,
+  community_area,
+  fbi_code,
+  year,
+  updated_on,
+  ST_GEOGPOINT(latitude, longitude) geo_point
+FROM `bigquery-public-data.chicago_crime.crime` crime
+WHERE year=2024
