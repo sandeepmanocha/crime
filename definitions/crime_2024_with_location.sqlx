@@ -1,6 +1,7 @@
 config {
     type: "table",
     tags: ["FULL", "FILTER_DATA"],
+    dependencies : ["adi_index_crime_2024_assertions_rowConditions"],
     assertions: {
         nonNull: ["zip_code"]
     }
