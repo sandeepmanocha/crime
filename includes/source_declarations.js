@@ -1,9 +1,14 @@
 const tables = {
     "name_basics": {
         "table": "crime",
-        "dataset": dataform.projectConfig.vars.SOURCE_DATASET,
+        "dataset": dataform.projectConfig.vars.CRIME_DATASET,
         "project": dataform.projectConfig.vars.SOURCE_PROJECT,
-    }
+    },
+    "zip_codes": {
+        "table": "zip_codes",
+        "dataset": dataform.projectConfig.vars.GEO_BOUNDARY_DATASET,
+        "project": dataform.projectConfig.vars.SOURCE_PROJECT,
+    }   
 }
 
 

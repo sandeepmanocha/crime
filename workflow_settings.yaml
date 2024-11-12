@@ -5,4 +5,6 @@ defaultAssertionDataset: data_processing
 dataformCoreVersion: 3.0.0-beta.6
 vars:
     SOURCE_PROJECT: bigquery-public-data
-    SOURCE_DATASET: chicago_crime
+    CRIME_DATASET: chicago_crime
+    GEO_BOUNDARY_DATASET: geo_us_boundaries
+    
