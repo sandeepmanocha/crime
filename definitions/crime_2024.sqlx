@@ -24,6 +24,6 @@ SELECT
   fbi_code,
   year,
   updated_on,
-  ST_GEOGPOINT(latitude, longitude) geo_point
+  ST_GEOGPOINT(longitude, latitude) geo_point
 FROM ${ref("crime")} crime
 WHERE year=2024
