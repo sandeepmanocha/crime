@@ -1,0 +1,16 @@
+config {
+    type: "table",
+    tags: ["FULL", "SUMMARY_DATA"]
+}
+
+SELECT
+  year,
+  zip_code,
+  COUNT(*) cnt,
+  STRING_AGG(primary_type) crime_primary_type,
+  STRING_AGG(description) crime_description,
+FROM
+  ${ref("crime_2024_with_location")}
+GROUP BY
+  year,
+  zip_code

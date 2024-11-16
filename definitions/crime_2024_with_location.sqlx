@@ -1,0 +1,35 @@
+config {
+    type: "table",
+    tags: ["FULL", "FILTER_DATA"],
+    dependencies : ["adi_index_crime_2024_assertions_rowConditions"]
+}
+
+SELECT
+  unique_key,
+  case_number,
+  date,
+  block,
+  iucr,
+  primary_type,
+  description,
+  location_description,
+  arrest,
+  domestic,
+  beat,
+  district,
+  ward,
+  community_area,
+  fbi_code,
+  year,
+  updated_on,
+  geo_point,
+  zip.city,
+  zip.county,
+  zip.state_code,
+  zip.zip_code
+FROM
+  ${ref("crime_2024")} crime
+LEFT JOIN
+  ${ref("zip_codes")} zip
+ON
+  ST_CONTAINS(zip.zip_code_geom, geo_point)

@@ -1,0 +1,29 @@
+config {
+    type: "table",
+    tags: ["FULL","FILTER_DATA"],
+    assertions: {
+      nonNull: ["unique_key"]
+    }
+}
+
+SELECT
+  unique_key,
+  case_number,
+  date,
+  block,
+  iucr,
+  primary_type,
+  description,
+  location_description,
+  arrest,
+  domestic,
+  beat,
+  district,
+  ward,
+  community_area,
+  fbi_code,
+  year,
+  updated_on,
+  ST_GEOGPOINT(longitude, latitude) geo_point
+FROM ${ref("crime")} crime
+WHERE year=2024
